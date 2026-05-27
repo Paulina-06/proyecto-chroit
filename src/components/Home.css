@@ -1,0 +1,1000 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/background.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  display: flex;               
+  flex-direction: column;
+  justify-content: center;      
+  align-items: center;          
+}
+
+
+.navbar-main {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+
+.search-bar {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  height: 45px;
+  color: white;
+  font-size: 15px;
+}
+
+
+.nav-links a {
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  text-shadow: 0 0 5px white;
+}
+
+
+.icon-group i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon-group i:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 5px #fff;
+}
+
+
+.hero-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;        
+}
+
+
+.hero-logo {
+  width: 480px;
+  filter: drop-shadow(0 0 15px #b37bff);
+}
+
+
+.alma-section {
+  width: 100%;
+  padding: 120px 0;
+  text-align: center;
+  background: #f5f5f5; 
+}
+
+.alma-title-top {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.alma-title-main {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #8d3bff;
+  margin-top: 10px;
+}
+
+.alma-text {
+  width: 70%;
+  max-width: 900px;
+  margin: 30px auto 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #333;
+}
+
+/* .section-split {
+  width: 100%;
+  min-height: 450px;
+} */
+
+
+.left-panel {
+  background: #7A00FF; 
+  color: white;
+  /* flex: 1; */
+}
+
+
+.section-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+
+.right-panel {
+  /* flex: 1; */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.section-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.referentes-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.referentes-subtitle {
+  color: #8b47ff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.referentes-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000;
+}
+
+.referente-icon {
+  width: 450px;
+}
+
+.referente-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: #000;
+}
+
+.referente-text {
+  color: #333;
+  font-size: 14px;
+  width: 80%;
+  margin: auto;
+}
+
+
+
+.cuadro-historia {
+  padding: 60px 0;
+}
+
+.cuadro-box {
+  width: 70%;
+  border: 4px solid #a24bff;
+  border-radius: 40px;
+  padding: 40px 60px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #5a5a5a;
+  background: white;
+  box-shadow: 0 0 10px rgba(162, 75, 255, 0.2);
+}
+
+.cuadro-box strong {
+  color: #3e3e3e;
+}
+
+.seccion-banner-morado {
+  background-color: #8300FF; 
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.titulo-banner {
+  color: white;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+
+.seccion-teaser {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  padding: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.texto-teaser {
+  max-width: 550px;
+  text-align: right;
+  color: white;
+}
+
+
+.frase-teaser {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 30rem;
+}
+
+
+.cursiva {
+  font-family: "Georgia", serif;
+  font-style: italic;
+}
+
+
+.descripcion-teaser {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+
+.btn-teaser {
+  background: transparent;
+  color: white;
+  border: 2px solid #a356ff; 
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-teaser:hover {
+  background: #a356ff;
+  color: white;
+}
+
+.cuadro-blanco-1{
+    width: 100%;
+    height: 1.5rem;
+    background-color: white;
+    position: relative;
+}
+
+
+.historia-section {
+    position: relative;
+    top: 20px;
+    bottom: 20px;
+    width: 100%;
+    min-height: 500px;
+}
+
+
+.historia-img {
+  flex: 1;
+  background-image: url("../assets/historia-fondo.PNG"); 
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+.historia-text-container {
+  flex: 1;
+  background-color: #9b32ff; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.historia-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: right;
+  font-family: "Fredoka", sans-serif; 
+}
+
+
+.historia-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  width: 90%;
+}
+
+/* .cuadro-blanco-2{
+    width: 100%;
+    height: 1rem;
+    background-color: white;
+    position: relative;
+} */
+
+
+.personajes-section {
+  width: 100%;
+  min-height: 380px;
+}
+
+
+.personajes-text-container {
+  flex: 1;
+  background-color: #a013ff; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.personajes-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-family: "Fredoka", sans-serif;
+}
+
+
+.personajes-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  width: 85%;
+}
+
+
+.personajes-img {
+  flex: 1;
+  background-image: url("../assets/personajes.png"); 
+  background-size: cover;
+ 
+}
+
+
+.sd-hero-section {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../assets/fondo-comic.png"); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  padding-left: 6rem;
+}
+
+/* Filtro morado oscuro */
+.sd-hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(120, 0, 255, 0.5);  
+  mix-blend-mode: multiply;
+}
+
+
+.sd-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+
+.sd-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+
+.sd-hero-btn {
+  padding: 0.8rem 2.2rem;
+  border: 2px solid #7f00ff;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+
+.sd-hero-btn:hover {
+  background: #7f00ff;
+  color: white;
+}
+
+
+.productos-section {
+  padding: 4rem 0;
+}
+
+.productos-title {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Fredoka", sans-serif;
+  color: #7a00ff;
+  margin-bottom: 3rem;
+}
+
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+
+.producto-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producto-img {
+  width: 100%;
+  background: #f8f8f8;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+.producto-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.producto-info h4 {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.producto-info p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.producto-info i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.btn-comprar {
+  width: 70%;
+  padding: 0.5rem 1rem;
+  background-color: #8a00ff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-comprar:hover {
+  background-color: #6b00cc;
+}
+
+.team-section {
+  padding: 5rem 0;
+}
+
+.team-title {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Fredoka", sans-serif;
+  background-color: #8a00ff;
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 4rem;
+  text-align: center;
+}
+
+
+.team-card {
+  padding: 1rem;
+}
+
+
+.team-avatar {
+  width: 200px;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+
+.team-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: .2rem;
+}
+
+
+.team-role {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: #8a00ff;
+}
+
+.team-role i {
+  font-size: 1.2rem;
+}
+
+
+.team-card p {
+  font-size: .95rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: #333;
+}
+
+.mensaje-section {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.mensaje-box {
+  width: 70%;
+  border: 5px solid #8A00FF;
+  border-radius: 30px;
+  padding: 2.5rem 3rem;
+}
+
+.mensaje-box p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #666;
+  font-weight: 400;
+}
+
+.footer{
+  background: #7400FF;
+  padding: 60px 0;
+}
+
+.footer-container{
+  max-width: 1100px;
+  margin: auto;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: flex-start; */
+  color: white;
+}
+
+.footer-container h1{
+   text-align: center;
+   font-size: 1.8rem;
+   margin-bottom: 3rem;
+   font-weight: 700;
+}
+
+.footer h3{
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.footer input{
+  background: transparent;
+  border: 2px solid #ffffff;
+  /* padding: 10px; */
+  margin-top: 10px;
+  color: white;
+  /* width: 260px; */
+}
+
+.iconos{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    position: relative;
+    top: 30px;
+    left: -48px;
+}
+
+.redes{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -187px;
+}
+
+.iconos a{
+  font-size: 36px;
+  color: white;
+  margin-right: 20px;
+  transition: .3s;
+}
+
+.iconos a:hover{
+  opacity: .7;
+  transform: scale(1.12);
+}
+
+@media (max-width: 768px) {
+
+  /* ---------- HERO ---------- */
+  .hero-container {
+    height: 90vh;
+    padding: 0 1rem;
+  }
+
+  .hero-logo {
+    width: 200px;
+  }
+
+  .navbar-main {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* ocultamos menú en móvil */
+  }
+
+  .search-bar {
+    display: none; /* ocultamos buscador */
+  }
+
+  /* ---------- ALMA ---------- */
+  .alma-section {
+    padding: 80px 20px;
+  }
+
+  .alma-title-top {
+    font-size: 1.5rem;
+  }
+
+  .alma-title-main {
+    font-size: 2.2rem;
+  }
+
+  .alma-text {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* ---------- SECTION SPLIT ---------- */
+  .section-split {
+    flex-direction: column;
+  }
+
+  .section-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* ---------- REFERENTES ---------- */
+  .referentes-title {
+    font-size: 1.8rem;
+  }
+
+  .referente-icon {
+    width: 100px;
+  }
+
+  .referente-text {
+    width: 100%;
+  }
+
+  /* ---------- CUADRO HISTORIA ---------- */
+  .cuadro-box {
+    width: 90%;
+    padding: 30px 20px;
+    font-size: 15px;
+  }
+
+  /* ---------- BANNER MORADO ---------- */
+  .titulo-banner {
+    font-size: 2.5rem;
+  }
+
+  /* ---------- TEASER ---------- */
+  .seccion-teaser {
+    height: auto;
+    padding: 3rem 1.5rem;
+    justify-content: center;
+  }
+
+  .texto-teaser {
+    text-align: center;
+  }
+
+  .frase-teaser {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+
+  /* ---------- HISTORIA ---------- */
+  .historia-section {
+    flex-direction: column;
+  }
+
+  .historia-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .historia-paragraph {
+    width: 100%;
+  }
+
+  /* ---------- PERSONAJES ---------- */
+  .personajes-section {
+    flex-direction: column;
+  }
+
+  .personajes-title {
+    font-size: 2.2rem;
+  }
+
+  .personajes-paragraph {
+    width: 100%;
+  }
+
+  /* ---------- SOMBRAS HERO ---------- */
+  .sd-hero-section {
+    padding: 3rem 1.5rem;
+    height: auto;
+  }
+
+  .sd-hero-title {
+    font-size: 2.3rem;
+  }
+
+  /* ---------- PRODUCTOS ---------- */
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-comprar {
+    width: 100%;
+  }
+
+  /* ---------- TEAM ---------- */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-avatar {
+    width: 150px;
+  }
+
+  /* ---------- MENSAJE ---------- */
+  .mensaje-box {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-container {
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .redes {
+    position: static;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .iconos {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  /* ---------- HERO ---------- */
+  .hero-container {
+    height: 90vh;
+    padding: 0 1rem;
+  }
+
+  .hero-logo {
+    width: 200px;
+  }
+
+  .navbar-main {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* ocultamos menú en móvil */
+  }
+
+  .search-bar {
+    display: none; /* ocultamos buscador */
+  }
+
+  /* ---------- ALMA ---------- */
+  .alma-section {
+    padding: 80px 20px;
+  }
+
+  .alma-title-top {
+    font-size: 1.5rem;
+  }
+
+  .alma-title-main {
+    font-size: 2.2rem;
+  }
+
+  .alma-text {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* ---------- SECTION SPLIT ---------- */
+  .section-split {
+    flex-direction: column;
+  }
+
+  .section-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* ---------- REFERENTES ---------- */
+  .referentes-title {
+    font-size: 1.8rem;
+  }
+
+  .referente-icon {
+    width: 100px;
+  }
+
+  .referente-text {
+    width: 100%;
+  }
+
+  /* ---------- CUADRO HISTORIA ---------- */
+  .cuadro-box {
+    width: 90%;
+    padding: 30px 20px;
+    font-size: 15px;
+  }
+
+  /* ---------- BANNER MORADO ---------- */
+  .titulo-banner {
+    font-size: 2.5rem;
+  }
+
+  /* ---------- TEASER ---------- */
+  .seccion-teaser {
+    height: auto;
+    padding: 3rem 1.5rem;
+    justify-content: center;
+  }
+
+  .texto-teaser {
+    text-align: center;
+  }
+
+  .frase-teaser {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+
+  /* ---------- HISTORIA ---------- */
+  .historia-section {
+    flex-direction: column;
+  }
+
+  .historia-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .historia-paragraph {
+    width: 100%;
+  }
+
+  /* ---------- PERSONAJES ---------- */
+  .personajes-section {
+    flex-direction: column;
+  }
+
+  .personajes-title {
+    font-size: 2.2rem;
+  }
+
+  .personajes-paragraph {
+    width: 100%;
+  }
+
+  /* ---------- SOMBRAS HERO ---------- */
+  .sd-hero-section {
+    padding: 3rem 1.5rem;
+    height: auto;
+  }
+
+  .sd-hero-title {
+    font-size: 2.3rem;
+  }
+
+  /* ---------- PRODUCTOS ---------- */
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-comprar {
+    width: 100%;
+  }
+
+  /* ---------- TEAM ---------- */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-avatar {
+    width: 150px;
+  }
+
+  /* ---------- MENSAJE ---------- */
+  .mensaje-box {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-container {
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .redes {
+    position: static;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .iconos {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
