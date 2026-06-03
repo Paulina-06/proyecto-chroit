@@ -9,6 +9,7 @@ import relojIcon from "../assets/icontime.png";
 import rayoIcon from "../assets/rayo.png";
 import totePurple from "../assets/totePurple.png";
 import toteWhite from "../assets/toteWhite.png";
+import { Link } from "react-router-dom";
 
 
 
@@ -37,6 +38,7 @@ function Home({texto, titulo}) {
                 <div className="col-4 d-flex justify-content-center">
                 <div className="d-flex gap-4 nav-links">
                     <a className="nav-link text-white" href="#">Proyecto</a>
+                    
                     <a className="nav-link text-white" href="#">Comic</a>
                     <a className="nav-link text-white" href="#">Tienda</a>
                     <a className="nav-link text-white" href="#">Integrantes</a>
@@ -291,9 +293,7 @@ function Home({texto, titulo}) {
                 SOMBRAS DEL <br /> DESPERTAR
                 </h2>
 
-                <button className="btn sd-hero-btn py-5 px-5" >
-                IR AL COMIC INTERACTIVO
-                </button>
+                <Link className="btn sd-hero-btn py-5 px-5" to="/comic">IR AL COMIC INTERACTIVO</Link>
             </div>
 
         </section>
