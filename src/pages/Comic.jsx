@@ -3,7 +3,7 @@ import React from 'react'
 const Comic = () => {
   return (
     <div>
-      <h1>Bienvenido al comic</h1>
+      <h1>Bienvenido a Sombras del Depertar</h1>
     </div>
   )
 }
