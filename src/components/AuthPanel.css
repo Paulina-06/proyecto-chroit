@@ -1,0 +1,316 @@
+/* ── Modal overlay ── */
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ── Wrapper ── */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Caja principal ── */
+.auth-box {
+  position: relative;
+  width: 800px;
+  min-height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: #1e0337;
+}
+
+/* ── Paneles de formulario ── */
+.auth-form-panel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 40px;
+  background: #1e0337;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 1;
+}
+
+/* Login: siempre en la izquierda */
+.panel-login {
+  left: 0;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Registro: siempre en la izquierda también, encima del login */
+.panel-register {
+  left: auto;
+  right: 0;    /* ← muévelo a la derecha */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* Cuando se activa registro */
+.auth-box.show-register .panel-login {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auth-box.show-register .panel-register {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Overlay morado: ocupa solo 50% y se desliza ── */
+.auth-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  right: 0;           /* empieza en la derecha */
+  display: flex;
+  transition: right 0.6s ease-in-out, border-radius 0.6s ease-in-out;
+  z-index: 10;
+  border-radius: 0 20px 20px 0;
+}
+
+/* Cuando se activa registro: overlay se mueve a la izquierda */
+.auth-box.show-register .auth-overlay {
+  right: 50%;
+  border-radius: 20px 0 0 20px;
+}
+
+/* Ambas mitades del overlay ocupan el 100% del contenedor */
+.overlay-left,
+.overlay-right {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #4e0ea2, #7a00ff);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Por defecto: muestra overlay-right (para login), oculta overlay-left */
+.overlay-left {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay-right {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Cuando registro activo: muestra overlay-left, oculta overlay-right */
+.auth-box.show-register .overlay-left {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.auth-box.show-register .overlay-right {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Textos del overlay ── */
+.auth-overlay h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.auth-overlay p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.88rem;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.auth-overlay-btn {
+  padding: 10px 36px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.auth-overlay-btn:hover {
+  background: #fff;
+  color: #7a00ff;
+}
+
+/* ── Títulos ── */
+.auth-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+}
+
+/* ── Iconos sociales ── */
+.auth-socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.auth-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.auth-social-btn:hover {
+  border-color: #bf7fff;
+  transform: scale(1.1);
+  color: #bf7fff;
+}
+
+/* ── Separador ── */
+.auth-divider {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 16px;
+}
+
+/* ── Inputs ── */
+.auth-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.auth-input:focus {
+  border-color: #bf7fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Forgot password ── */
+.auth-forgot {
+  font-size: 0.78rem;
+  color: #bf7fff;
+  text-decoration: none;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.auth-forgot:hover {
+  text-decoration: underline;
+}
+
+/* ── Botón submit ── */
+.auth-btn {
+  width: 100%;
+  padding: 11px;
+  background: linear-gradient(to right, #4e0ea2, #7a00ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+
+.auth-btn:hover {
+  opacity: 0.85;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .auth-box {
+    width: 95%;
+    min-height: unset;
+  }
+
+  .auth-form-panel {
+    position: relative;
+    width: 100%;
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  .panel-register {
+    display: none;
+  }
+
+  .auth-box.show-register .panel-register {
+    display: flex;
+    position: relative;
+  }
+
+  .auth-box.show-register .panel-login {
+    display: none;
+  }
+
+  .auth-overlay {
+    position: relative;
+    width: 100%;
+    right: unset !important;
+    border-radius: 0 0 16px 16px !important;
+  }
+
+  .overlay-left,
+  .overlay-right {
+    position: relative;
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  .auth-box:not(.show-register) .overlay-left {
+    display: none;
+  }
+
+  .auth-box.show-register .overlay-right {
+    display: none;
+  }
+}

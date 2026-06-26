@@ -1,476 +1,356 @@
 import "./Home.css";
 import Producto from "./Producto.jsx";
+import AuthPanel from "../components/AuthPanel";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import chroitLogo from "../assets/chroit.png";
-import relojImg from "../assets/reloj.jpeg";
 import fondoTeaser from "../assets/fondo-teaser.png";
 import gearIcon from "../assets/engranajes.png";
-import relojIcon from "../assets/icontime.png";
+import relojIcon from "../assets/reloj.png";
 import rayoIcon from "../assets/rayo.png";
 import totePurple from "../assets/totePurple.png";
 import toteWhite from "../assets/toteWhite.png";
-import { Link } from "react-router-dom";
+import logo from "../assets/gif-logo.gif";
 
+function Home({ texto, titulo }) {
 
+  const [mostrarAuth, setMostrarAuth] = useState(false);
+  const [verVideo, setVerVideo] = useState(false);
 
+  const [cart, setCart] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
-function Home({texto, titulo}) {
+  const addToCart = (product) => setCart([...cart, product]);
+
+  const removeFromCart = (productId) => {
+    setCart(cart.filter((item) => item.id !== productId));
+  };
+
+  const addToFavorites = (product) => {
+    if (!favorites.find((fav) => fav.id === product.id)) {
+      setFavorites([...favorites, product]);
+    }
+  };
+
+  const removeFromFavorites = (productId) => {
+    setFavorites(favorites.filter((item) => item.id !== productId));
+  };
+
   return (
     <>
 
-       {/* HERO */}
-        <header className="hero-container">
+      {/* HERO */}
+      <header className="hero-container">
 
         {/* NAVBAR */}
         <nav className="navbar-main px-5 py-3">
-            <div className="container-fluid">
+          <div className="container-fluid">
             <div className="row align-items-center">
 
-                {/* BUSCADOR — IZQUIERDA */}
-                <div className="col-4 d-flex align-items-center">
-                <div className="search-bar d-flex align-items-center px-3">
-                    <i className="bi bi-search me-2"></i>
-                    <span>Buscar</span>
-                </div>
-                </div>
-
-                {/* MENÚ — CENTRO */}
-                <div className="col-4 d-flex justify-content-center">
+              {/* MENÚ — CENTRO */}
+              <div className="col-12 d-flex justify-content-center">
                 <div className="d-flex gap-4 nav-links">
-                    <a className="nav-link text-white" href="#">Proyecto</a>
-                    
-                    <a className="nav-link text-white" href="#">Comic</a>
-                    <a className="nav-link text-white" href="#">Tienda</a>
-                    <a className="nav-link text-white" href="#">Integrantes</a>
+                  <a className="nav-link text-white" href="#">Origen</a>
+                  <a className="nav-link text-white" href="#">Fragmentos</a>
+                  <a className="nav-link text-white" href="#">Tienda</a>
+                  <a className="nav-link text-white" href="#">Creadores</a>
                 </div>
-                </div>
+              </div>
 
-                {/* ICONOS — DERECHA */}
-                <div className="col-4 d-flex justify-content-end">
+              {/* ICONOS — DERECHA */}
+              <div className="col-4 d-flex justify-content-end">
                 <div className="d-flex gap-4 icon-group">
-                    <i className="bi bi-cart text-white fs-4"></i>
-                    <i className="bi bi-heart text-white fs-4"></i>
-                    <i className="bi bi-person text-white fs-4"></i>
+                  <i className="bi bi-cart text-white fs-4"></i>
+                  <i className="bi bi-heart text-white fs-4"></i>
+                  <i
+                    className="bi bi-person text-white fs-4"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setMostrarAuth(true)}
+                  ></i>
                 </div>
-                </div>
+              </div>
 
             </div>
-            </div>
+          </div>
         </nav>
 
-        {/* LOGO CENTRAL */}
-        <div className="hero-logo-container">
-            <img src={chroitLogo} alt="chroit" className="hero-logo" />
+      </header>
+
+      {/* MODAL AUTH */}
+      {mostrarAuth && (
+        <div
+          className="auth-modal-overlay"
+          onClick={() => setMostrarAuth(false)}
+        >
+          <div onClick={(e) => e.stopPropagation()}>
+            <AuthPanel />
+          </div>
         </div>
+      )}
 
-        </header>
-
-
-     
       {/* SECCIÓN EL ALMA */}
       <section className="alma-section">
-
-        <h2 className="alma-title-top">El Alma</h2>
-
-        <h2 className="alma-title-main">De CHROIT</h2>
-
+        <h2 className="alma-title-top">VERDAD</h2>
+        <h2 className="alma-title-main">OCULTA</h2>
         <p className="alma-text">
-          {texto}
+          <span className="texto-manuscrito">Chroit </span>
+          nace donde la memoria permanece viva. Entre símbolos olvidados, ecos ancestrales y futuros
+          posibles, cada elección revela una <span className="texto-morado">verdad oculta</span>: el
+          pasado no ha desaparecido, sigue esperando ser descubierto.
         </p>
-
       </section>
 
-    
       {/* NUEVA SECCIÓN (MODO OBJETIVO) */}
       <section className="section-split d-flex flex-column flex-md-row">
 
         {/* IZQUIERDA */}
         <div className="left-panel d-flex flex-column justify-content-center p-5">
-          <h2 className="section-title mb-4">
-            {titulo}
-          </h2>
-
+          <h2 className="fw-black text-uppercase section-title mb-4">Origen</h2>
           <p className="section-text">
-            En CHROIT buscamos transformar el tiempo en experiencias significativas,
-            potenciando la creatividad y el diseño como herramientas para dar vida a historias
-            que conectan, inspiran y trascienden.
+            Crear experiencias trasmedia que conecten la memoria, el tiempo y la identidad, inspirando a las personas a explorar
+            nuevas perspectivas y decubrir el impacto de cada decisión en su propia historia.
           </p>
         </div>
 
         {/* DERECHA */}
         <div className="right-panel">
-          <img
-            src={relojImg} 
-            alt="mision"
-            className="img-fluid section-image"
-          />
+          <img src={logo} alt="mision" className="img-fluid section-image" />
         </div>
 
       </section>
 
-       
-        {/* SECCIÓN: REFERENTES DE LA MARCA */}
-        <section className="referentes-section container text-center py-5">
+      {/* SECCIÓN: MEMORIAS VIVAS */}
+      <div className="memories-bg">
+        <section className="memories-section container text-center ">
 
-            <h3 className="referentes-subtitle">Referentes de la marca</h3>
+          <h2 className="memories-title1">MEMORIAS <span className="memories-title2">VIVAS</span></h2>
 
-            <h2 className="referentes-title">
-                Los pilares que dieron forma a <br /> nuestra identidad
-            </h2>
+          <div className="memories-container">
+            <p className="memories-text">
+              Entre engranajes, relojes y destellos, habita la escencia de Chroit.
+              Símbolos que evocan el paso del tiempo, la fuerza de la transformación
+              y la conexión entre cada historia. Son recuerdos convertidos en
+              significado, guiando el camino de quienes se atrevan a descubrirlo.
+            </p>
 
-            <div className="row mt-4 g-4">
+            <div className="row mt-4 g-4 iconos-m justify-content-between">
 
-                {/* PILAR 1 */}
-                <div className="col-12 col-md-4">
-                <img
-                    src={gearIcon}
-                    alt="engranajes"
-                    className="referente-icon"
-                />
+              <div className="col-12 col-md-4 d-flex flex-column align-items-center">
+                <img src={gearIcon} alt="engranajes" className="referente-icon-g" />
+                <h4 className="memories-subtitle mt-3">Conexión</h4>
+              </div>
 
-                <h4 className="referente-heading mt-3">
-                    Cada elemento en CHROIT tiene un propósito
-                </h4>
+              <div className="col-12 col-md-4 d-flex flex-column align-items-center">
+                <img src={relojIcon} alt="reloj de arena" className="referente-icon-r" />
+                <h4 className="memories-subtitle mt-3">Memoria</h4>
+              </div>
 
-                <p className="referente-text">
-                    La marca refleja orden, estrategia y control, tanto en su mensaje como en su forma visual.
-                    Nada está puesto al azar.
-                </p>
-                </div>
-
-                {/* PILAR 2 */}
-                <div className="col-12 col-md-4">
-                <img
-                    src={relojIcon}
-                    alt="reloj de arena"
-                    className="referente-icon"
-                />
-
-                <h4 className="referente-heading mt-3">
-                    El tiempo es el eje central de CHROIT
-                </h4>
-
-                <p className="referente-text">
-                    No solo como algo que pasa, sino como un recurso valioso que puede organizarse, gestionarse y aprovecharse.
-                </p>
-                </div>
-
-                {/* PILAR 3 */}
-                <div className="col-12 col-md-4">
-                <img
-                    src={rayoIcon}
-                    alt="rayo"
-                    className="referente-icon"
-                />
-
-                <h4 className="referente-heading mt-3">
-                    CHROIT nace de una necesidad de comunicar ideas de forma clara y moderna
-                </h4>
-
-                <p className="referente-text">
-                    Su diseño está basado en la simplicidad, el minimalismo y una estética visual que proyecta tecnología y creatividad.
-                </p>
-                </div>
+              <div className="col-12 col-md-4 d-flex flex-column align-items-center">
+                <img src={rayoIcon} alt="rayo" className="referente-icon-ry" />
+                <h4 className="memories-subtitle mt-3">Transformación</h4>
+              </div>
 
             </div>
+          </div>
+
 
         </section>
+      </div>
 
+      {/* SECCION BANNER */}
+      <section className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
+        <h2 className="titulo-banner">FRAGMENTOS</h2>
+      </section>
 
-        
-        {/* SECCIÓN CUADRO DE HISTORIA / DESCRIPCIÓN */}
+      {/* SECCION OBRA */}
+      <section className="obra-section">
+        <h2 className="obra-title-top">OBRA</h2>
+        <h2 className="obra-title-main">INICIAL</h2>
+        <p className="obra-text">
+          <span className="texto-manuscrito1">Sombras del Despetar</span> es el primer proyecto trasmedia de Chroit.
+          Una historia postapocalíptica que se expande a través del <span className="texto-morado">cómic,</span>
+          experiencias interactivas y contenido digital, invitando a la audiencia a explorar un universo donde la percepcíon y el miedo transforman la realidad
+        </p>
+      </section>
 
-        <section className="cuadro-historia container d-flex justify-content-center">
-
-            <div className="cuadro-box text-center">
-
-                <p>
-                Nuestra marca <strong>“CHROIT”</strong> tiene como primera creación un comic
-                interactivo transmedia al que llamamos <strong>sombras del despertar</strong>.
-                </p>
-
-                <p className="mt-4">
-                Esta historia tiene como referente la película <strong>Bird Box</strong> y 
-                <strong> The Happening</strong>, principalmente escenario postapocalíptico 
-                que se muestra.
-                </p>
-
-            </div>
-
-        </section>
-
-        {/*  SECCION BANNER */}
-        <section className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
-
-           <h2 className="titulo-banner">SOMBRAS<br />DEL DESPERTAR</h2>
-
-        </section>
-
-       {/*  FONDO-TEASER */}
-
-        <section className="seccion-teaser container-fluid d-flex align-items-center" style={{ backgroundImage: `url(${fondoTeaser})` }}>
-
-            <div className="texto-teaser ms-auto">
-
-                <h3 className="frase-teaser cursiva">
-                Ella solo quería ver qué había dentro…
-                </h3>
-
-                <p className="descripcion-teaser">
-                Lo abrió. Y lo que desató no piensa detenerse.<br />
-                Mira el teaser y atrévete a ver lo que nunca debió abrirse
-                </p>
-
-                <button className="btn-teaser">IR A TEASER</button>
-
-            </div>
-
-        </section>
-
-        {/* SECCION-HISTORIA */}
-        <section className="historia-section d-flex flex-column flex-md-row">
-
-            {/* IZQUIERDA — IMAGEN */}
-            <div className="historia-img"></div>
-
-                {/* DERECHA — TEXTO */}
-                <div className="historia-text-container p-5 ">
-                    <h2 className="historia-title">Historia</h2>
-
-                <p className="historia-paragraph">
-                Sombras del Despertar nace como una experiencia narrativa única ,
-                es una experiencia que te sumerge en un mundo donde el pasado y el futuro
-                se entrelazan. A través de una historia distópica llena de mitología,
-                misterio que son el centro de la trama , exploramos cómo las creencias
-                de civilizaciones antiguas siguen marcando nuestra identidad y forma de pensar.
-                Con un enfoque visual envolvente y una narrativa que invita a la reflexión,
-                este proyecto no solo entretiene, sino que también despierta curiosidad por el
-                legado cultural que nos define. <br /><br />
-                El presente documento muestra el proceso que se llevó a cabo para la realización
-                de este proyecto donde se encuentran, desde los  objetivos hasta el desarrollo
-                de la identidad visual del proyecto.
-                </p>
-            </div>
-
-        </section>
-
-        <section className="cuadro-blanco-1"></section>
-
-        {/* SECCION-PERSONAJES */}
-        <section className="personajes-section container-fluid"> 
+        {/* FONDO-TEASER */}
+        <section
+          className="seccion-teaser container-fluid d-flex align-items-center"
+          style={verVideo ? { background: "#000" } : { backgroundImage: `url(${fondoTeaser})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        >
             
-            <div className="row"> 
-
-                <div className="col-12 col-md-6 personajes-text-container p-5">
-
-                    {/* IZQUIERDA — TEXTO */}
-                    <h2 className="personajes-title">Personajes</h2>
-
-                    <p className="personajes-paragraph">
-                    En un mundo colapsado por el miedo y el misterio del cielo, cuatro figuras 
-                    emergen con destinos entrelazados: una protectora marcada por la pérdida, 
-                    un líder fanático que predica el caos, un joven en busca de propósito y 
-                    una presencia enigmática que desafía toda lógica. Esta imagen retrata a los 
-                    protagonistas de una historia donde la supervivencia es solo el principio.
-                    </p>
-                </div>
-
-                <div className="col-12 col-md-6 personajes-img">
-
-                    {/* DERECHA — IMAGEN */}
-                </div>
-
+        {verVideo ? (
+            <div className="teaser-video-wrap">
+              <button className="btn-cerrar-video" onClick={() => setVerVideo(false)}>✕ Cerrar</button>
+              <iframe
+                className="teaser-video"
+                src="https://youtu.be/Rw_KT-4yDxQ"
+                title="Teaser"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
             </div>
-        </section>
+        ) : (
+          <div className="texto-teaser ms-auto">
+            <h3 className="frase-teaser cursiva">Ella solo quería ver qué había dentro…</h3>
+            <p className="descripcion-teaser">
+              Lo abrió. Y lo que desató no piensa detenerse.<br />
+              Mira el teaser y atrévete a ver lo que nunca debió abrirse
+            </p>
+            <button className="btn-teaser" onClick={() => setVerVideo(true)}>IR A TEASER</button>
+          </div>
+        )}
+      </section>
 
-        <section className="cuadro-blanco-2"></section>
+      {/* SECCION-HISTORIA */}
+      <section className="historia-section d-flex flex-column flex-md-row">
+        <div className="historia-img"></div>
+        <div className="historia-text-container p-5">
+          <h2 className="historia-title">Sinopsis</h2>
+          <div className="content-paragraph">
+            <p className="historia-paragraph1">
+              Cinco años después del evento conocido como La Fractura, el mundo ha cambiado por completo. Ya nadie puede mirar al cielo sin consecuencias. Quienes lo hacen, experimentan visiones intensas y personales de sus peores miedos, traumas o errores, que los llevan al borde de la locura… y, en la mayoría de los casos, al suicidio
+            </p>
+            <p className="historia-paragraph2">
+              Alma Serrano, una exparamédica marcada por la pérdida, sobrevive junto a un grupo de niños en una estación subterránea. Cuando una de las niñas desaparece, emprende una búsqueda que la llevará a enfrentarse a una peligrosa secta, a oscuros secretos y a sus propios demonios.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* ECCION-COMIC-INT */}
-        <section className="sd-hero-section d-flex align-items-center">
+      {/* SECCION-COMIC-INT */}
+      <section className="sd-hero-section d-flex align-items-center">
+        <div className="sd-hero-content">
+          <h2 className="sd-hero-title">SOMBRAS DEL <br /> DESPERTAR</h2>
+          <Link className="btn sd-hero-btn" to="/comic">IR AL COMIC INTERACTIVO</Link>
+        </div>
+      </section>
 
-            <div className="sd-hero-content">
-                <h2 className="sd-hero-title">
-                SOMBRAS DEL <br /> DESPERTAR
-                </h2>
+      {/* SECCION BANNER */}
+      <section className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
+        <h2 className="titulo-banner">TIENDA</h2>
+      </section>
 
-                <Link className="btn sd-hero-btn py-5 px-5" to="/comic">IR AL COMIC INTERACTIVO</Link>
-            </div>
-
-        </section>
-
-        {/* SECCION-SHOP */}
-        <section className="container my-5">
+      {/* SECCION-SHOP */}
+      {/* SECCION-SHOP */}
+      <section className="container my-5">
         <h2 className="productos-title text-center">PRODUCTOS</h2>
+        <div className="row g-5">
+          <div className="col-12 col-md-4">
+            <Producto
+              imagen={totePurple}
+              nombre="TOTE BAG MORADA"
+              precio="$000.000"
+              addToCart={addToCart}
+              addToFavorites={addToFavorites}
+              removeFromFavorites={removeFromFavorites}
+              removeFromCart={removeFromCart}
+            />
+          </div>
+          <div className="col-12 col-md-4">
+            <Producto
+              imagen={totePurple}
+              nombre="TOTE BAG MORADA"
+              precio="$000.000"
+              addToCart={addToCart}
+              addToFavorites={addToFavorites}
+              removeFromFavorites={removeFromFavorites}
+              removeFromCart={removeFromCart}
+            /> 
+          </div>
+          <div className="col-12 col-md-4">
+            <Producto
+              imagen={totePurple}
+              nombre="TOTE BAG MORADA"
+              precio="$000.000"
+              addToCart={addToCart}
+              addToFavorites={addToFavorites}
+              removeFromFavorites={removeFromFavorites}
+              removeFromCart={removeFromCart}
+            />
+          </div>
+        </div>
+      </section>
 
-            <div className="row g-5">
-
-                <div className="col-12 col-md-4">
-                <Producto
-                    imagen={totePurple}
-                    nombre="TOTE BAG"
-                    precio="$000.000"
-                
-                />
-                </div>
-
-                <div className="col-12 col-md-4">
-                <Producto
-                    imagen={toteWhite}
-                    nombre="TOTE BAG"
-                    precio="$000.000"
-                
-                />
-                </div>
-
-                <div className="col-12 col-md-4">
-                <Producto
-                    imagen={totePurple}
-                    nombre="TOTE BAG"
-                    precio="$000.000"
-                />
-                </div>
-
-                <div className="col-12 col-md-4">
-                
-                <Producto
-                    imagen={toteWhite}
-                    nombre="TOTE BAG"
-                    precio="$000.000"
-                    />
-                    
-                </div>
-
-                <div className="col-12 col-md-4">
-                <Producto
-                    imagen={totePurple}
-                    nombre="TOTE BAG"
-                    precio="$000.000"
-                />
-                </div>
-
-                <div className="col-12 col-md-4">
-                <Producto
-                    imagen={toteWhite}
-                    nombre="TOTE BAG"
-                    precio="$000.000"
-                    textoBoton="verde"
-                />
-                </div>
-
+      {/* Sección de favoritos */}
+      <div className="favorites">
+        <h3>Favoritos</h3>
+        {favorites.length === 0 ? <p>No tienes favoritos aún</p> : (
+          favorites.map((item) => (
+            <div key={item.id} className="favorito-item">
+              <p>{item.name}</p>
+              <button className="btn-eliminar" onClick={() => removeFromFavorites(item.id)}>Eliminar</button>
             </div>
+          ))
+        )}
+      </div>
 
-        </section>
-
-        {/* SECCION-CREADORAS */}
-        <section className="team-section container">
-
-        <h2 className="team-title text-center">NUESTRO EQUIPO DE TRABAJO</h2>
-
-            <div className="team-grid">
-
-                {/* SALOME */}
-                <div className="team-card">
-                <img src="../src/assets/salome.png" alt="integrante" className="team-avatar" />
-
-                <h3>Salome</h3>
-
-                <div className="team-role">
-                    <i className="bi bi-pencil"></i>
-                    <span>Ilustradora</span>
-                </div>
-
-                <p>
-                    una de las creadoras de CHROIT, y mi esencia está en lo visual.
-                    <br/><br/>
-                    Como la mente gráfica del equipo, me apasiona transformar ideas en mundos visuales que hablen por sí solos.
-                    <br/><br/>
-                    Mi inspiración nace de una verdad que siempre ha estado presente: las civilizaciones antiguas son el origen de todo. 
-                    Aunque pasen mil años, su sabiduría y simbolismo siguen siendo pilares fundamentales de nuestra historia.
-                </p>
-                </div>
-
-                {/* MARIANA */}
-                <div className=" team-card">
-                <img src="../src/assets/mariana.png" alt="integrante" className="team-avatar" />
-
-                <h3>Mariana</h3>
-
-                <div className="team-role">
-                    <i className="bi bi-pencil"></i>
-                    <span>Editora</span>
-                </div>
-
-                <p>
-                    una de las creadoras de CHROIT, y mi esencia está en la Edición.
-                    <br/><br/>
-                    Soy la voz silenciosa detrás de cada palabra. Me aseguro de que la historia fluya, que cada diálogo tenga sentido y que cada emoción llegue con fuerza.
-                    <br/><br/>
-                    En un mundo donde el lector elige su camino, mi trabajo es que todos los caminos tengan alma, coherencia y poder narrativo.
-                    No solo corrijo errores. Doy forma a lo que emociona, conecta y permanece.
-                </p>
-                </div>
-
-                {/* PAULINA */}
-                <div className="team-card">
-                <img src="../src/assets/paulina.png" alt="integrante" className="team-avatar" />
-
-                <h3>Paulina</h3>
-
-                <div className="team-role">
-                    <i className="bi bi-pencil"></i>
-                    <span>Guionista</span>
-                </div>
-
-                <p>
-                    una de las creadoras de CHROIT, y mi esencia está en los Guiones.
-                    <br/><br/>
-                    Mi trabajo es construir el mundo, dar vida a los personajes y escribir las decisiones que el lector podrá tomar.  
-                    No solo cuento una historia, creo caminos posibles, con emociones reales y consecuencias distintas.
-                    <br/><br/>
-                    Cada diálogo, cada silencio y cada giro está pensado para que el lector no solo lea, sino sienta que es parte de la historia.
-                </p>
-                </div>
-
+      {/* Sección de carrito */}
+      <div className="cart">
+        <h3>Carrito</h3>
+        {cart.length === 0 ? <p>Tu carrito está vacío</p> : (
+          cart.map((item, index) => (
+            <div key={index} className="carrito-item">
+              <p>{item.name}</p>
+              <button className="btn-eliminar" onClick={() => removeFromCart(item.id)}>Eliminar</button>
             </div>
+          ))
+        )}
+      </div>
 
-        </section>
 
-        <section className="mensaje-section container">
+      {/*BANNER-SECTION-CREADORES*/}
+      <section className="container-fluid banner-creadoras d-flex justify-content-center align-items-center">
 
-            <div className="mensaje-box">
-                <p>
-                En Sombras del Despertar, nuestro enfoque es claro: demostrar que lo ancestral y lo tecnológico no son opuestos, sino dos fuerzas que, juntas, pueden contar historias poderosas.
-                De nuestra parte, buscamos ese equilibrio: memoria y evolución conviviendo en un mismo universo.
-                </p>
+        <h2 className="team-title ">CREADORES</h2>  
+
+      </section>
+
+      {/* SECCION-CREADORAS */}
+      <section className="team-section container">
+      
+      
+        <div className="team-grid">
+
+          <div className="team-card">
+            <img src="../src/assets/Salome.png" alt="integrante" className="team-avatar" />
+            <h3>Salome</h3>
+            <div className="team-role"><i className="bi bi-pencil"></i><span>Ilustradora</span></div>
+            <p>Da forma a las ideas que habitan nuestro universo,transformando conceptos en experiencias visuales.</p>
+          </div>
+
+
+          <div className="team-card">
+            <img src="../src/assets/Paulina.png" alt="integrante" className="team-avatar" />
+            <h3>Paulina</h3>
+            <div className="team-role"><i className="bi bi-pencil"></i><span>Editora</span></div>
+            <p>Teje historias y significados que dan vida a cada rincón del mundo Chroit</p>
+          </div>
+
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="footer-container">
+          <h1>CONTACTANOS</h1>
+          <div className="datos">
+            <h3>DATOS</h3>
+            <p>Cel: 3004456982</p>
+            <p>Correo: chroit.10@gmail.com</p>
+            <label>INGRESA AQUI TU CORREO:</label>
+            <input type="email" placeholder="tu-email@correo.com" />
+          </div>
+          <div className="redes">
+            <h3>REDES</h3>
+            <div className="iconos">
+              <a href="#" target="_blank"><i className="bi bi-instagram"></i></a>
+              <a href="#" target="_blank"><i className="bi bi-facebook"></i></a>
+              <a href="#" target="_blank"><i className="bi bi-twitter-x"></i></a>
             </div>
-
-        </section>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <h1>CONTÁCTANOS</h1>
-
-                <div class="datos">
-                <h3>DATOS</h3>
-                <p>Cel: 3004456982</p>
-                <p>Correo: chroitmsp@gmail.com</p>
-
-                <label>INGRESA AQUÍ TU CORREO:</label>
-                <input type="email" placeholder="tu-email@correo.com"></input>
-                </div>
-
-                <div class="redes">
-                <h3>REDES</h3>
-
-                <div class="iconos">
-                    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                </div>
-                </div>
-
-            </div>
-        </footer>
+          </div>
+        </div>
+      </footer>
 
     </>
   );
