@@ -13,6 +13,10 @@
   src: url("../assets/fonts/CampanaScript_PERSONAL_USE_ONLY.otf") format("opentype");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -107,6 +111,7 @@ body {
   position: relative;
   font-family: FuenteTitulo;
   letter-spacing: 2px;
+
 }
 
 .alma-title-main {
@@ -117,7 +122,10 @@ body {
   margin-left: 20px;
   font-family: FuenteTitulo;
   letter-spacing: 2px;
+  
 }
+
+
 
 .alma-text {
   width: 70%;
@@ -236,6 +244,19 @@ body {
 
 .referente-icon-ry {
   width: 119px;
+}
+
+.referente-icon-g,
+.referente-icon-r,
+.referente-icon-ry {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.referente-icon-g:hover,
+.referente-icon-r:hover,
+.referente-icon-ry:hover {
+  transform: scale(1.15);
 }
 
 .memories-subtitle {
@@ -766,6 +787,12 @@ body {
 
 .team-card {
   padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+
+.team-card:hover {
+  transform: translateY(-10px);
 }
 
 
@@ -815,9 +842,18 @@ body {
 }
 
 .footer{
-  background: #170527;
   padding: 60px 0;
+  background: linear-gradient(270deg, #170527, #3a0070, #170527);
+  background-size: 400% 400%;
+  animation: gradiente 6s ease infinite;
 }
+
+@keyframes gradiente {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .footer-container{
   max-width: 1100px;
