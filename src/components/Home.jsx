@@ -1,6 +1,8 @@
 import "./Home.css";
 import Producto from "./Producto.jsx";
 import AuthPanel from "../components/AuthPanel";
+import ModalCarrito from "./ModalCarrito";
+import ModalFavoritos from "./ModalFavoritos";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -20,21 +22,17 @@ function Home({ texto, titulo }) {
   const [cart, setCart] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
+  const [showCart, setShowCart] = useState(false);
+  const [showFavorites, setShowFavorites] = useState(false);
+
   const addToCart = (product) => setCart([...cart, product]);
-
-  const removeFromCart = (productId) => {
-    setCart(cart.filter((item) => item.id !== productId));
-  };
-
+  const removeFromCart = (id) => setCart(cart.filter((item) => item.id !== id));
   const addToFavorites = (product) => {
     if (!favorites.find((fav) => fav.id === product.id)) {
       setFavorites([...favorites, product]);
     }
   };
-
-  const removeFromFavorites = (productId) => {
-    setFavorites(favorites.filter((item) => item.id !== productId));
-  };
+  const removeFromFavorites = (id) => setFavorites(favorites.filter((item) => item.id !== id));
 
   return (
     <>
@@ -50,18 +48,26 @@ function Home({ texto, titulo }) {
               {/* MENÚ — CENTRO */}
               <div className="col-12 d-flex justify-content-center">
                 <div className="d-flex gap-4 nav-links">
-                  <a className="nav-link text-white" href="#">Origen</a>
-                  <a className="nav-link text-white" href="#">Fragmentos</a>
-                  <a className="nav-link text-white" href="#">Tienda</a>
-                  <a className="nav-link text-white" href="#">Creadores</a>
+                  <a className="nav-link text-white" href="#origen">Origen</a>
+                  <a className="nav-link text-white" href="#fragmentos">Fragmentos</a>
+                  <a className="nav-link text-white" href="#tienda">Tienda</a>
+                  <a className="nav-link text-white" href="#creadores">Creadores</a>
                 </div>
               </div>
 
               {/* ICONOS — DERECHA */}
               <div className="col-4 d-flex justify-content-end">
                 <div className="d-flex gap-4 icon-group">
-                  <i className="bi bi-cart text-white fs-4"></i>
-                  <i className="bi bi-heart text-white fs-4"></i>
+                  <i
+                    className="bi bi-cart text-white fs-4"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setShowCart(true)}
+                  ></i>
+                  <i
+                    className="bi bi-heart text-white fs-4"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setShowFavorites(true)}
+                  ></i>
                   <i
                     className="bi bi-person text-white fs-4"
                     style={{ cursor: "pointer" }}
@@ -89,7 +95,7 @@ function Home({ texto, titulo }) {
       )}
 
       {/* SECCIÓN EL ALMA */}
-      <section className="alma-section">
+      <section id="origen" className="alma-section">
         <h2 className="alma-title-top">VERDAD</h2>
         <h2 className="alma-title-main">OCULTA</h2>
         <p className="alma-text">
@@ -158,7 +164,7 @@ function Home({ texto, titulo }) {
       </div>
 
       {/* SECCION BANNER */}
-      <section className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
+      <section id="fragmentos" className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
         <h2 className="titulo-banner">FRAGMENTOS</h2>
       </section>
 
@@ -184,7 +190,7 @@ function Home({ texto, titulo }) {
               <button className="btn-cerrar-video" onClick={() => setVerVideo(false)}>✕ Cerrar</button>
               <iframe
                 className="teaser-video"
-                src="https://youtu.be/Rw_KT-4yDxQ"
+                src="https://www.youtube.com/embed/Rw_KT-4yDxQ?autoplay=1"
                 title="Teaser"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
@@ -228,11 +234,58 @@ function Home({ texto, titulo }) {
       </section>
 
       {/* SECCION BANNER */}
-      <section className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
+      <section id="tienda" className="container-fluid seccion-banner-morado d-flex justify-content-center align-items-center">
         <h2 className="titulo-banner">TIENDA</h2>
       </section>
 
-      {/* SECCION-SHOP */}
+
+      {/* MODAL CARRITO */}
+      {showCart && (
+        <div
+          className="custom-modal-overlay"
+          onClick={() => setShowCart(false)}
+        >
+          <div className="custom-modal" onClick={(e) => e.stopPropagation()}>
+            <h3>Carrito de compras</h3>
+            {cart.length === 0 ? (
+              <p>Tu carrito está vacío</p>
+            ) : (
+              cart.map((item) => (
+                <div key={item.id} className="modal-item">
+                  <span>{item.name}</span>
+                  <button className="btn-eliminar" onClick={() => removeFromCart(item.id)}>Eliminar</button>
+                </div>
+              ))
+            )}
+            <button className="btn-cerrar" onClick={() => setShowCart(false)}>Cerrar</button>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL FAVORITOS */}
+      {showFavorites && (
+        <div
+          className="custom-modal-overlay"
+          onClick={() => setShowFavorites(false)}
+        >
+          <div className="custom-modal" onClick={(e) => e.stopPropagation()}>
+            <h3>Favoritos</h3>
+            {favorites.length === 0 ? (
+              <p>No tienes favoritos aún</p>
+            ) : (
+              favorites.map((item) => (
+                <div key={item.id} className="modal-item">
+                  <span>{item.name}</span>
+                  <button className="btn-eliminar" onClick={() => removeFromFavorites(item.id)}>Eliminar</button>
+                </div>
+              ))
+            )}
+            <button className="btn-cerrar" onClick={() => setShowFavorites(false)}>Cerrar</button>
+          </div>
+        </div>
+      )}
+
+
       {/* SECCION-SHOP */}
       <section className="container my-5">
         <h2 className="productos-title text-center">PRODUCTOS</h2>
@@ -273,35 +326,9 @@ function Home({ texto, titulo }) {
         </div>
       </section>
 
-      {/* Sección de favoritos */}
-      <div className="favorites">
-        <h3>Favoritos</h3>
-        {favorites.length === 0 ? <p>No tienes favoritos aún</p> : (
-          favorites.map((item) => (
-            <div key={item.id} className="favorito-item">
-              <p>{item.name}</p>
-              <button className="btn-eliminar" onClick={() => removeFromFavorites(item.id)}>Eliminar</button>
-            </div>
-          ))
-        )}
-      </div>
-
-      {/* Sección de carrito */}
-      <div className="cart">
-        <h3>Carrito</h3>
-        {cart.length === 0 ? <p>Tu carrito está vacío</p> : (
-          cart.map((item, index) => (
-            <div key={index} className="carrito-item">
-              <p>{item.name}</p>
-              <button className="btn-eliminar" onClick={() => removeFromCart(item.id)}>Eliminar</button>
-            </div>
-          ))
-        )}
-      </div>
-
 
       {/*BANNER-SECTION-CREADORES*/}
-      <section className="container-fluid banner-creadoras d-flex justify-content-center align-items-center">
+      <section id="creadores" className="container-fluid banner-creadoras d-flex justify-content-center align-items-center">
 
         <h2 className="team-title ">CREADORES</h2>  
 

@@ -1,11 +1,25 @@
+@font-face {
+  font-family: "FuenteTitulo";
+  src: url("../assets/fonts/BarberChop.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "FuenteTexto";
+  src: url("../assets/fonts/Unageo-Light.ttf") format("truetype");
+}
+
+
 /* ── Hero ── */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #4e0ea2, #8b36c7);
+  background-image: url(/public/assets/chapter_4.png);
+  background-position-x: -100px;
+  background-position-y: -50px;
+  background-repeat: no-repeat;
   padding: 60px 80px;
-  min-height: 530px;
+  min-height: 730px;
   flex-wrap: wrap;
   gap: 40px;
 }
@@ -18,23 +32,14 @@
 .hero-title {
   font-size: 3rem;
   margin-bottom: 20px;
+  font-family: FuenteTitulo;
 }
 
 .hero-desc {
   font-size: 1.5rem;
   line-height: 1.6;
-}
-
-.hero-img-wrap {
-  flex: 1 1 200px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-img {
-  height: 304px;
-  object-fit: contain;
-  max-width: 100%;
+  max-width: 800px;
+  font-family: FuenteTexto;
 }
 
 /* ── Episodios ── */
@@ -46,13 +51,14 @@
   font-size: 2rem;
   margin-bottom: 20px;
   margin-left: 20px;
+  font-family: FuenteTitulo;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  padding-left: 10px;
+  gap: 20px;
+  padding-left: 100px;
 }
 
 .card {
@@ -73,14 +79,15 @@
 }
 
 .card-title {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
+  font-family: FuenteTexto;
+  font-weight: 900;
   margin-top: 8px;
   font-size: 1rem;
 }
 
 .card-desc {
   font-size: 0.85rem;
+  font-family: FuenteTexto;
   color: #444;
   margin-top: 4px;
   line-height: 1.4;
@@ -97,12 +104,14 @@
 
 .footer-title {
   margin-bottom: 10px;
+  margin-left: 25px;
   font-size: 22px;
 }
 
 .footer-desc {
   font-size: 14px;
   margin-bottom: 20px;
+  margin-left: 25px;
   color: #bbb;
 }
 
@@ -122,6 +131,7 @@
 
 .footer-bottom {
   margin-top: 20px;
+  margin-left: 25px;
   border-top: 1px solid #333;
   padding-top: 20px;
   font-size: 13px;
@@ -143,7 +153,7 @@
 }
 
 .cap-logo-img {
-  height: 120px;
+  height: 80px;
 }
 
 .nav-list {

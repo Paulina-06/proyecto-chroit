@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import Comic from './pages/Comic'
-import Home from './components/Home'
+import Comic from './pages/Comic';
+import Home from './components/Home';
 
 const App = () => {
   return (
