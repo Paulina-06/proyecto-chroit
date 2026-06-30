@@ -179,24 +179,21 @@ function Home({ texto, titulo }) {
         </p>
       </section>
 
-        {/* FONDO-TEASER */}
-        <section
-          className="seccion-teaser container-fluid d-flex align-items-center"
-          style={verVideo ? { background: "#000" } : { backgroundImage: `url(${fondoTeaser})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        >
-            
+      {/* FONDO-TEASER */}
+      <section
+        className="seccion-teaser container-fluid d-flex align-items-center"
+        style={verVideo ? { background: "#000" } : { backgroundImage: `url(${fondoTeaser})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+
         {verVideo ? (
-            <div className="teaser-video-wrap">
-              <button className="btn-cerrar-video" onClick={() => setVerVideo(false)}>✕ Cerrar</button>
-              <iframe
-                className="teaser-video"
-                src="https://www.youtube.com/embed/Rw_KT-4yDxQ?autoplay=1"
-                title="Teaser"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+          <div className="teaser-video-wrap">
+            <button className="btn-cerrar-video" onClick={() => setVerVideo(false)}>✕ Cerrar</button>
+  
+            <video width="400" controls>
+              <source src="./assets/Teaser.mp4" type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+          </div>
         ) : (
           <div className="texto-teaser ms-auto">
             <h3 className="frase-teaser cursiva">Ella solo quería ver qué había dentro…</h3>
@@ -310,7 +307,7 @@ function Home({ texto, titulo }) {
               addToFavorites={addToFavorites}
               removeFromFavorites={removeFromFavorites}
               removeFromCart={removeFromCart}
-            /> 
+            />
           </div>
           <div className="col-12 col-md-4">
             <Producto
@@ -330,14 +327,14 @@ function Home({ texto, titulo }) {
       {/*BANNER-SECTION-CREADORES*/}
       <section id="creadores" className="container-fluid banner-creadoras d-flex justify-content-center align-items-center">
 
-        <h2 className="team-title ">CREADORES</h2>  
+        <h2 className="team-title ">CREADORES</h2>
 
       </section>
 
       {/* SECCION-CREADORAS */}
       <section className="team-section container">
-      
-      
+
+
         <div className="team-grid">
 
           <div className="team-card">
