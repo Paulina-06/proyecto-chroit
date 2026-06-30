@@ -371,9 +371,9 @@ function Home({ texto, titulo }) {
           <div className="redes">
             <h3>REDES</h3>
             <div className="iconos">
-              <a href="#" target="_blank"><i className="bi bi-instagram"></i></a>
-              <a href="#" target="_blank"><i className="bi bi-facebook"></i></a>
-              <a href="#" target="_blank"><i className="bi bi-twitter-x"></i></a>
+              <a href="https://www.instagram.com" target="_blank"><i className="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com" target="_blank"><i className="bi bi-facebook"></i></a>
+              <a href="https://www.tiktok.com" target="_blank"><i className="bi bi-tiktok"></i></a>
             </div>
           </div>
         </div>
