@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+         <div class="container">
+            <div class="libro_der"></div>
+            <div class="libro_izq"></div>
+            <div id="libro"></div>
+            <div id="araña"></div>
+            <div id="muñeco"></div>
+            <div class="cubo1" id="cubo1"></div>
+            <div class="cubo2" id="cubo2"></div>
+            <div class="cubo3" id="cubo3"></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+
+    <script>  
+     const libroAnimado = lottie.loadAnimation({
+      container: document.getElementById("libro"),
+      render: 'svg',
+      loop: false,
+      autoplay: false,
+      path: 'img/libro.json'
+    })
+
+    document.getElementById("cubo2").addEventListener("click", function() {
+      libroAnimado.stop();
+      libroAnimado.play();
+    });
+
+         const arañaAnimada = lottie.loadAnimation({
+      container: document.getElementById("araña"),
+      render: 'svg',
+      loop: false,
+      autoplay: false,
+      path: 'img/araña.json'
+    })
+
+        document.getElementById("cubo3").addEventListener("click", function() {
+      arañaAnimada.stop();
+      arañaAnimada.play();
+    });
+
+             const muñecoAnimado = lottie.loadAnimation({
+      container: document.getElementById("muñeco"),
+      render: 'svg',
+      loop: false,
+      autoplay: false,
+      path: 'img/muñeco.json'
+    })
+
+        document.getElementById("cubo1").addEventListener("click", function() {
+      muñecoAnimado.stop();
+      muñecoAnimado.play();
+    });
+
+    </script>
+    
+</body>
+</html>

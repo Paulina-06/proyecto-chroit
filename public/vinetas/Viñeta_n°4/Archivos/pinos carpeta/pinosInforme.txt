@@ -1,0 +1,28 @@
+Informe creado: 
+	27/06/2026	4:03:53 a. m.
+
+Nombre del proyecto: pinos.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°4\pinos carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	pinos
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 283 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°4\pinos.ai
+	
+Procesando plugins:
+	Classic 3D
+	
+Efectos utilizados: 1
+
+Efecto: Posición libre
+	
+

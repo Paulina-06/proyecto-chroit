@@ -1,0 +1,23 @@
+Informe creado: 
+	28/06/2026	11:35:35 p. m.
+
+Nombre del proyecto: ojos.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°1\Archivos\ojos carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	OJOS
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 217 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°1\Archivos\OJOS.ai
+	
+Procesando plugins:
+	Classic 3D
+	

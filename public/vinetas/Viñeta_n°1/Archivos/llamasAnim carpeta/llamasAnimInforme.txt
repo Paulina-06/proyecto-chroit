@@ -1,0 +1,28 @@
+Informe creado: 
+	28/06/2026	10:52:18 p. m.
+
+Nombre del proyecto: llamasAnim.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°1\assets\llamasAnim carpeta\llamasAnim carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	llamas
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 241 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°1\assets\llamas .ai
+	
+Procesando plugins:
+	Classic 3D
+	
+Efectos utilizados: 1
+
+Efecto: Posición libre
+	
+

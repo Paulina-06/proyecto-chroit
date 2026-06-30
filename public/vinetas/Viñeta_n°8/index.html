@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+       <div id="luces"></div>
+       <div id="rayos"></div>
+       <div id="personaje"></div>
+       <div class="cubo2" id="cubo2"></div>
+    <div class="cubo1" id="cubo1"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+    <script>
+
+        document.getElementById('luces').addEventListener("click", function(){
+            this.classList.add("luces1")
+            setTimeout(() => {
+                this.classList.remove("luces1")
+            }, 6000)
+        })
+        const rayosAnim = lottie.loadAnimation({
+            container: document.getElementById('rayos'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: "rayos.json"
+        });
+
+        document.getElementById('cubo2').addEventListener("click", function(){
+            rayosAnim.stop();
+            rayosAnim.play();
+        })
+            
+
+        const personajeAnim = lottie.loadAnimation({
+            container: document.getElementById('personaje'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: "data.json"
+        });
+
+        document.getElementById('cubo1').addEventListener("click", function(){
+            personajeAnim.stop();
+            personajeAnim.play();
+        })
+            
+
+
+    </script>
+</body>
+</html>

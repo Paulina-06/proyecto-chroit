@@ -1,0 +1,28 @@
+Informe creado: 
+	28/06/2026	4:27:29 p. m.
+
+Nombre del proyecto: hojas.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°5\hojas carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	hojas
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 314 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°5\hojas.ai
+	
+Procesando plugins:
+	Classic 3D
+	
+Efectos utilizados: 1
+
+Efecto: Posición libre
+	
+

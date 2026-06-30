@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylr.css">
+</head>
+<body>
+    <div class="container">
+        <div id="hojasAnim"></div>
+        <div id="libroAnim"></div>
+        <div id="ojosAnim"></div>
+        <div class="boca"></div>
+    <div class="cubo2" id="cubo2"></div>
+    <div class="cubo1" id="cubo1"></div>
+        
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+        <script>
+            const hojas = lottie.loadAnimation({
+            container: document.getElementById('hojasAnim'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/hojasAnim.json'
+            })
+
+        document.getElementById("cubo1").addEventListener("click", function() {
+        hojas.stop();
+        hojas.play();
+    });
+
+            const libro = lottie.loadAnimation({
+            container: document.getElementById('libroAnim'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/libroAnim.json'
+            })
+
+        document.getElementById("cubo2").addEventListener("click", function() {
+        libro.stop();
+        libro.play();
+    });
+
+            const ojos = lottie.loadAnimation({
+            container: document.getElementById('ojosAnim'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/ojosAnim.json'
+            })
+
+        document.getElementById("cubo2").addEventListener("click", function() {
+        ojos.stop();
+        ojos.play();
+    });
+
+
+
+        </script>

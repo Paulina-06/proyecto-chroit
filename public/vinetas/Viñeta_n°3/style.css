@@ -1,0 +1,48 @@
+.container{  
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    position: relative;
+    background-image: url(./assets/fondo.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+#ancestro{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    top: 500px;
+    left: 0px;
+}
+
+.cubo1{
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background-image: url(./assets/boton.png);
+    background-size: cover;
+    top: 250px;
+    left: 160px;
+}
+
+#humo{
+    position: absolute;
+    width: 1000px;
+    height: 1080px;
+}
+
+.cubo2{
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background-image: url(./assets/boton.png);
+    background-size: cover;
+    top: 650px;
+    left: 1500px;
+}

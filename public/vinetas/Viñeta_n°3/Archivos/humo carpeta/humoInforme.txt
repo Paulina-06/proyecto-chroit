@@ -1,0 +1,23 @@
+Informe creado: 
+	29/06/2026	1:13:10 a. m.
+
+Nombre del proyecto: humo.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°3\Archivos\humo carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	humo
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 233 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°3\Archivos\humo.ai
+	
+Procesando plugins:
+	Classic 3D
+	

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ancestros"></div>
+        <div id="llamas"></div>
+        <div class="cubo1" id="cubo1"></div>
+        <div id="ojos"></div>
+        <div class="cubo2" id="cubo2"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const llamasAnim = lottie.loadAnimation({
+            container: document.getElementById('llamas'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/llamas.json'
+            })
+
+        document.getElementById("cubo1").addEventListener("click", function() {
+        llamasAnim.stop();
+        llamasAnim.play();
+    });
+
+        const ojosAnim = lottie.loadAnimation({
+            container: document.getElementById('ojos'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/ojos.json'
+            })
+
+        document.getElementById("cubo2").addEventListener("click", function() {
+        ojosAnim.stop();
+        ojosAnim.play();
+    });
+    </script>
+</body>
+</html>

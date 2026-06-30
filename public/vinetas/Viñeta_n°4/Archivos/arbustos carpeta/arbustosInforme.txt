@@ -1,0 +1,23 @@
+Informe creado: 
+	27/06/2026	4:09:58 a. m.
+
+Nombre del proyecto: arbustos.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°4\arbustos carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	arbustos
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 260 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°4\arbustos.ai
+	
+Procesando plugins:
+	Classic 3D
+	

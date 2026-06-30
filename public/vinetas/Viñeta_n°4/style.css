@@ -1,0 +1,56 @@
+.container{
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    position: relative;
+    background-image: url(./assets/fondo.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+
+
+#pinosAnim{
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+}
+
+
+
+.cubo2{
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background-image: url(./assets/boton.png);
+    background-size: cover;
+    top: 210px;
+    left: 1340px;
+}
+   
+   
+   
+   
+   
+   
+.niña_sprite{
+    width: 615PX;
+    height: 709PX;
+    background-image: url(./assets/niña-sprite.png);
+    position: absolute;
+    top: 320px;
+    left: 700px;
+    scale: 1;
+    animation: gSCALE 1.5s steps(2) infinite;
+    }
+    
+    @keyframes gSCALE {
+        100% {
+            background-position: 1024px;
+        }
+    }

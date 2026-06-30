@@ -1,0 +1,57 @@
+.container{  
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    position: relative;
+    background-image: url(./assets/fondo-1.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.ancestros{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background-image: url(./assets/ANCESTROS.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#llamas{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+
+}
+
+.cubo1{
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background-image: url(./assets/boton.png);
+    background-size: cover;
+    top: 250px;
+    left: 160px;
+}
+
+
+#ojos{
+    position: absolute;
+    width: 600px;
+    height: 550px;;
+}
+
+.cubo2 {
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background-image: url(./assets/boton.png);
+    background-size: cover;
+    top: 550px;
+    left: 1390px;
+}

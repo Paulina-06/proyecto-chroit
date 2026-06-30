@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+         <div id="pinosAnim"></div>
+         <div class="cubo1" id="cubo1"></div>
+         <div id="arbustosAnim"></div>
+         <div class="cubo2" id="cubo2"></div>
+         <div class="niña_sprite"></div>
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const pinos = lottie.loadAnimation({
+            container: document.getElementById('pinosAnim'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/pinosAnim.json'
+            })
+
+        document.getElementById("cubo2").addEventListener("click", function() {
+        pinos.stop();
+        pinos.play();
+    });
+
+            const arbustos = lottie.loadAnimation({
+            container: document.getElementById('arbustosAnim'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/arbustosAnim.json'
+            })
+
+        document.getElementById("cubo2").addEventListener("click", function() {
+        arbustos.stop();
+        arbustos.play();
+    });
+
+    </script>
+    
+</body>
+</html>

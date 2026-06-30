@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="ancestroAdmin"></div>
+        <div class="cubo1" id="cubo1"></div>
+        <div id="humo"></div>
+        <div class="cubo2" id="cubo2"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const ancesAnim = lottie.loadAnimation({
+            container: document.getElementById('ancestroAdmin'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/ancestroAnim.json'
+            })
+
+        document.getElementById("cubo1").addEventListener("click", function() {
+        ancesAnim.stop();
+        ancesAnim.play();
+    });
+
+        const humoAnim = lottie.loadAnimation({
+            container: document.getElementById('humo'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'assets/humo.json'
+            })
+
+        document.getElementById("cubo2").addEventListener("click", function() {
+        humoAnim.stop();
+        humoAnim.play();
+    });
+
+
+    </script>
+</body>
+</html>

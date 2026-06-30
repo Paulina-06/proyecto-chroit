@@ -1,0 +1,23 @@
+Informe creado: 
+	29/06/2026	1:25:24 p. m.
+
+Nombre del proyecto: libro.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°6\libro carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	libro
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 381 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°6\libro.ai
+	
+Procesando plugins:
+	Classic 3D
+	

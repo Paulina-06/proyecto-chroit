@@ -1,0 +1,23 @@
+Informe creado: 
+	27/06/2026	1:12:10 a. m.
+
+Nombre del proyecto: ancestro.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°3\ancestro carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	ancestro
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 256 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°3\ancestro.ai
+	
+Procesando plugins:
+	Classic 3D
+	

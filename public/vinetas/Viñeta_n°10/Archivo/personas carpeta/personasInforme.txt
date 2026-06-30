@@ -1,0 +1,23 @@
+Informe creado: 
+	29/06/2026	2:56:03 p. m.
+
+Nombre del proyecto: personas.aep
+
+Archivos de origen recopilados en: 
+	E:\Nueva carpeta\Viñeta_n°10\Archivo\personas carpeta
+
+Archivos de origen recopilados: Todo
+
+Comp. recopiladas:  
+	Personas
+	
+Número de archivos recopilados: 1
+
+Tamaño de los archivos recopilados: 341 KB
+
+Archivos de origen recopilados: 
+	E:\Nueva carpeta\Viñeta_n°10\Archivo\Personas.ai
+	
+Procesando plugins:
+	Classic 3D
+	
