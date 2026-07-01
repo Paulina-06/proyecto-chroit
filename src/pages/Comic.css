@@ -209,12 +209,16 @@
   font-size: 90px;
   color: #fff;
   margin-bottom: 16px;
+  font-family: FuenteTitulo;
+  letter-spacing: 2px;
 }
 
 .cap-desc {
   font-size: 24px;
+  font-weight: 600;
   color: #fff;
   line-height: 1.4;
+  font-family: FuenteTexto;
 }
 
 .cap-btn {
@@ -223,9 +227,10 @@
   align-items: center;
   width: 105px;
   height: 40px;
-  background: white;
-  color: black;
+  background: rgba(158, 40, 212, 0.455);
+  color: rgb(255, 255, 255);
   font-weight: 600;
+  font-family: FuenteTexto;
   text-decoration: none;
   border-radius: 20px;
   margin-top: 20px;
@@ -233,7 +238,7 @@
 
 /* ── Capítulo — barra de episodios ── */
 .cap-btn-bar {
-  background: rgba(0, 0, 0, 0.61);
+  background: rgba(158, 40, 212, 0.455);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -258,8 +263,8 @@
 .cap-ep-active {
   width: 15%;
   height: 50px;
-  background: #a5a5a5;
-  color: #000;
+  background: #a51fffa5;
+  color: #ffffff;
   border: none;
   font-size: 1rem;
   font-weight: 700;
@@ -267,7 +272,7 @@
   cursor: pointer;
 }
 
-/* ── Volver ── */
+
 .back-btn {
   background: none;
   border: 1px solid #4e0ea2;
@@ -280,9 +285,9 @@
   display: inline-block;
 }
 
-/* ─────────────────────────────────────────────
-   VISOR DE VIÑETAS
-───────────────────────────────────────────── */
+
+  /*  VISOR DE VIÑETAS */
+
 .visor-container {
   width: 100%;
   min-height: 100vh;

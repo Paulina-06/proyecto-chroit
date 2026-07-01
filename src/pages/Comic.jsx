@@ -11,7 +11,7 @@ const comic = {
   capitulos: [
     {
       id: 1,
-      nombreCap: "Prólogo",
+      nombreCap: "Prologo",
       imgPortada: "/assets/chapter_2.png",
       descripcion:
         "Un ritual maya intenta sellar una fuerza oscura. Siglos después, la niña Selma rompe la barrera y libera la Fractura, un fenómeno que desata el miedo más profundo de cada persona.",
@@ -89,18 +89,16 @@ const comic = {
     },
     {
       id: 3,
-      nombreCap: "El dolor se mira",
+      nombreCap: "EN CONSTRUCCION...",
       imgPortada: "/assets/chapter_3.png",
-      descripcion:
-        "Dante Reyes emerge como líder de un culto que predica mirar al cielo como fe. Alma y Niko son capturados, pero logran escapar con la ayuda de Vika.",
+      
       vinetas: [],
     },
     {
       id: 4,
-      nombreCap: "Lo que uno elige",
+      nombreCap: "EN CONSTRUCCION...",
       imgPortada: "/assets/chapter_1.png",
-      descripcion:
-        "En el clímax dentro del templo derrumbado, Dante intenta consumar su visión frente a niños y seguidores. Alma lo enfrenta, Niko activa su sistema de espejos, y Vika observa en silencio.",
+      
       vinetas: [],
     },
   ],
