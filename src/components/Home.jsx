@@ -189,7 +189,7 @@ function Home({ texto, titulo }) {
           <div className="teaser-video-wrap">
             <button className="btn-cerrar-video" onClick={() => setVerVideo(false)}>✕ Cerrar</button>
   
-            <video width="400" controls>
+            <video width="800" controls>
               <source src="./assets/Teaser.mp4" type="video/mp4" />
               Your browser does not support HTML video.
             </video>
