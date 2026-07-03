@@ -338,7 +338,7 @@ function Home({ texto, titulo }) {
         <div className="team-grid">
 
           <div className="team-card">
-            <img src="../src/assets/Salome.png" alt="integrante" className="team-avatar" />
+            <img src="/assets/Salome.png" alt="integrante" className="team-avatar" />
             <h3>Salome</h3>
             <div className="team-role"><i className="bi bi-pencil"></i><span>Ilustradora</span></div>
             <p>Da forma a las ideas que habitan nuestro universo,transformando conceptos en experiencias visuales.</p>
@@ -346,7 +346,7 @@ function Home({ texto, titulo }) {
 
 
           <div className="team-card">
-            <img src="../src/assets/Paulina.png" alt="integrante" className="team-avatar" />
+            <img src="/assets/Paulina.png" alt="integrante" className="team-avatar" />
             <h3>Paulina</h3>
             <div className="team-role"><i className="bi bi-pencil"></i><span>Editora</span></div>
             <p>Teje historias y significados que dan vida a cada rincón del mundo Chroit</p>
